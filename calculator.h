@@ -1,23 +1,15 @@
-#include "calculator.h"
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
 
-
-
-int Calculator::Add(double a, double b)
+class Calculator
 {
-	return a + b + 0.5;
-}
+    public:
+        int Add (double, double);
+        int Sub (double, double);
+        int Mul (double, double);
 
-int Calculator::Sub(double a, double b)
-{
-    return Add (a, -b);
-}
+        template<typename T>
+        T Increment(T&& data);
+};
 
-int Calculator::Mul(double a, double b)
-{
-    return a * b + 0.5;
-}
-
-template<typename T>
-T Calculator::Increment(T&& data) {
-    return ++data;
-}
+#endif//CALCULATOR_H
